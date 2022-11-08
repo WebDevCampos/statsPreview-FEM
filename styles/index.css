@@ -6,10 +6,10 @@
   --white: hsl(0, 0%, 100%); /*(main heading, stats)*/
   --slightlyTransparentWhite1: hsla(0, 0%, 100%, 0.75); /*(main paragraph)*/
   --slightlyTransparentWhite2: hsla(0, 0%, 100%, 0.6); /* (stat headings)*/
-  --footerLink: hsl(228, 45%, 44%);
-  --gray: hsl(0, 0%, 71.4%);
-  --interFont: "Inter", sans-serif;
-  --LexendDecaFont: "Lexend Deca", sans-serif;
+  --footerLink: hsl(228, 45%, 44%); /*footer anchor tag*/
+  --gray: hsl(0, 0%, 71.4%); /*footer*/
+  --interFont: "Inter", sans-serif; /*main text font family*/
+  --LexendDecaFont: "Lexend Deca", sans-serif; /*stats text font family*/
 }
 
 body {
@@ -20,16 +20,27 @@ body {
 img {
   width: 100%;
 }
-/* main,
+main,
 img,
 .text-container,
 .image-container {
   height: 500px;
-} */
+}
 main {
   max-width: 1440px;
   margin: 3rem auto 0;
   background-color: var(--darkDesaturatedBlue);
+}
+main {
+  border-radius: 1.3rem 1.3rem 0 0;
+}
+img,
+.image-container,
+.image-container::before {
+  border-radius: 0 1.3rem 0 0;
+}
+footer {
+  border-radius: 0 0 1.3rem 1.3rem;
 }
 .container {
   display: flex;
@@ -42,23 +53,34 @@ main {
 }
 .text-container,
 .image-container {
-  max-width: 100%;
+  width: 100%;
 }
 .main-text {
   width: 60%;
   height: 80%;
-
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   margin: 3rem auto;
 }
-.main-text h1 {
+.main-text > div > h1 {
   margin-bottom: 2rem;
+  font-size: 3.4rem;
+  letter-spacing: 0.2rem;
+}
+.main-text p {
+  color: var(--slightlyTransparentWhite1);
+  line-height: 3rem;
 }
 .stats {
   display: flex;
   justify-content: space-between;
+}
+.stats div {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: start;
 }
 .stats h2 {
   color: var(--slightlyTransparentWhite2);
@@ -66,6 +88,8 @@ main {
 .stats p {
   text-transform: uppercase;
   font-family: var(--LexendDecaFont);
+  font-weight: 700;
+  color: var(--white);
 }
 .image-container {
   position: relative;
@@ -100,6 +124,17 @@ main {
 }
 
 @media screen and (max-width: 768px) {
+  * {
+    text-align: center;
+  }
+  img,
+  .image-container,
+  .image-container::before {
+    border-radius: 1.3rem 1.3rem 0 0;
+  }
+  footer {
+    border-radius: 0 0 1.3rem 1.3rem;
+  }
   main,
   img,
   .text-container,
@@ -112,20 +147,22 @@ main {
   .container {
     flex-flow: column;
   }
-  .text-container,
-  .main-text {
-    height: 45vh;
+  .text-container {
+    height: 80vh;
   }
-
   .main-text {
     width: 90%;
     margin: 2rem auto;
   }
+
   .stats {
     flex-flow: column;
-    height: 400px;
     align-items: center;
     margin: 2rem 0;
+  }
+  .stats div {
+    align-items: center;
+    margin: 3rem 0;
   }
   .text-container {
     order: 2;
