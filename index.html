@@ -46,15 +46,21 @@
 
             <div class="stats">
               <div>
-                <h2>10k+</h2>
+                <h2>
+                  <span class="tenK">0</span>
+                  k+
+                </h2>
                 <p>companies</p>
               </div>
               <div>
-                <h2>314</h2>
+                <h2><span class="moreThan300">0</span></h2>
                 <p>templates</p>
               </div>
               <div>
-                <h2>12M+</h2>
+                <h2>
+                  <span class="twelveM">0</span>
+                  M+
+                </h2>
                 <p>queries</p>
               </div>
             </div>
@@ -85,5 +91,26 @@
         .
       </footer>
     </main>
+
+    <script>
+      const tenK = document.querySelector(".tenK");
+      const twelveM = document.querySelector(".twelveM");
+      const moreThan300 = document.querySelector(".moreThan300");
+      const roll = setInterval(() => {
+        tenK.textContent++;
+        tenK.textContent == 10 ? clearInterval(roll) : null;
+      }, 100);
+
+      const roll2 = setInterval(() => {
+        moreThan300.textContent++;
+        moreThan300.textContent == 314 ? clearInterval(roll2) : null;
+      }, 1);
+      const roll3 = setInterval(() => {
+        twelveM.textContent++;
+        twelveM.textContent == 12 ? clearInterval(roll3) : null;
+      }, 100);
+
+      window.onload(roll());
+    </script>
   </body>
 </html>

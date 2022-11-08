@@ -85,6 +85,9 @@ footer {
   color: var(--white);
   font-weight: 700;
 }
+.stats h2 span {
+  font-size: inherit;
+}
 .stats p {
   text-transform: uppercase;
   font-family: var(--LexendDecaFont);
