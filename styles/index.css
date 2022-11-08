@@ -96,6 +96,7 @@ footer {
 }
 .stats p:hover {
   cursor: pointer;
+  color: var(--softViolet);
 }
 .image-container {
   position: relative;
