@@ -121,6 +121,12 @@ img {
 .attribution a {
   color: var(--footerLink);
 }
+@media screen and (max-width: 900px) {
+  .main-content {
+    padding: 1rem;
+    width: 90%;
+  }
+}
 
 @media screen and (max-width: 768px) {
   main {
@@ -140,11 +146,6 @@ img {
     height: 100%;
   }
 
-  .main-content {
-    padding: 1rem;
-    width: 90%;
-    margin: 3rem auto;
-  }
   .stats ul {
     margin: 3rem 0;
   }
