@@ -68,12 +68,12 @@ p {
 img {
   width: 100%;
 }
-.text-container {
+.text-container,
+.stats li p:first-child {
   color: var(--white);
 }
 .main-content {
   width: 70%;
-
   margin: 3rem auto;
 }
 .main-content h1 {
@@ -90,7 +90,6 @@ img {
 }
 
 .stats li p:first-child {
-  color: var(--white);
   font-weight: 700;
   font-size: 2.4rem;
 }
@@ -136,12 +135,11 @@ img {
     align-items: center;
     text-align: center;
   }
-  .stats ul {
-    height: 100%;
-  }
+  .stats ul,
   .text-container {
     height: 100%;
   }
+
   .main-content {
     padding: 1rem;
     width: 90%;
@@ -153,7 +151,6 @@ img {
   .text-container {
     order: 2;
   }
-
   .image-container {
     border-radius: 1rem 1rem 0 0;
   }
